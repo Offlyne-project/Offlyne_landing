@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFFLYNE - Desactiva la dopamina, no la vida</title>
+    <!-- Google Fonts - Lobster (similar al logo de Instagram) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lobster', cursive;
+            background-color: #003f5c;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .logo {
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 40px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border: none;
+            outline: none;
+        }
+
+        /* Fallback if logo doesn't load */
+        .logo-placeholder {
+            max-width: 200px;
+            width: 100%;
+            height: 80px;
+            margin-bottom: 40px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content {
+            margin-bottom: 40px;
+        }
+
+        .content p {
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .email-form input[type="email"] {
+            padding: 12px 16px;
+            font-size: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            width: 100%;
+            max-width: 300px;
+            transition: border-color 0.3s ease;
+            font-family: 'Lobster', cursive;
+        }
+
+        .email-form input[type="email"]::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+            font-family: 'Lobster', cursive;
+        }
+
+        .email-form input[type="email"]:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.6);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .email-form button {
+            padding: 12px 24px;
+            font-size: 20px;
+            font-weight: 400;
+            background-color: #FF9500;
+            color: #000000;
+            border: 2px solid #FF9500;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 120px;
+            font-family: 'Lobster', cursive;
+        }
+
+        .email-form button:hover {
+            background-color: #FFB333;
+            border-color: #FFB333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 149, 0, 0.3);
+        }
+
+        .email-form button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 6px rgba(255, 149, 0, 0.2);
+        }
+
+        /* Text logo as fallback */
+        .text-logo {
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Lobster', cursive;
+        }
+        
+        .text-logo .off {
+            color: white;
+        }
+        
+        .text-logo .lyne {
+            background-color: #FF9500;
+            color: black;
+            padding: 2px 8px;
+            border-radius: 6px;
+            margin-left: 4px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            .content p {
+                font-size: 18px;
+            }
+
+            .logo {
+                max-width: 150px;
+                margin-bottom: 30px;
+            }
+
+            .text-logo {
+                font-size: 30px;
+                margin-bottom: 30px;
+            }
+
+            .email-form {
+                gap: 12px;
+            }
+
+            .email-form input[type="email"] {
+                font-size: 16px;
+                padding: 10px 14px;
+            }
+
+            .email-form button {
+                font-size: 18px;
+                padding: 10px 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content p {
+                font-size: 16px;
+                line-height: 1.3;
+            }
+
+            .logo {
+                max-width: 120px;
+                margin-bottom: 25px;
+            }
+            
+            .text-logo {
+                font-size: 26px;
+                margin-bottom: 25px;
+            }
+
+            .email-form input[type="email"] {
+                font-size: 14px;
+            }
+
+            .email-form button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Intento 1: Usar la URL directa del blob -->
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/OFFLYNE_LOGO%20800x800-RZ2XR1XPpOpAzdJE9YzQJfqI0TuA1j.png" alt="OFFLYNE Logo" class="logo" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='flex';">
+        
+        <!-- Fallback: Logo de texto en caso de que la imagen no cargue -->
+        <div id="fallback-logo" class="text-logo" style="display: none;">
+            <span class="off">OFF</span><span class="lyne">LYNE</span>
+        </div>
+        
+        <div class="content">
+            <p>Desactiva la dopamina, no la vida. Una herramienta crítica y ética para dejar el porno compulsivo. Sin moralismo. Sin adicción nueva.</p>
+            <p>En construcción. Si tú también estás dentro del bucle, esto es para ti.</p>
+        </div>
+
+        <form class="email-form" action="https://formspree.io/f/xrbkgkyd" method="POST">
+            <input type="email" name="email" placeholder="Tu email (opcional)" required>
+            <button type="submit">Avísame</button>
+        </form>
+    </div>
+</body>
+</html>
